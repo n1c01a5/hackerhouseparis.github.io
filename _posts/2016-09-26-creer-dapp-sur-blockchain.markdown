@@ -10,7 +10,7 @@ hypothèques, etc. Alors que pour la plupart des gens, passer au Bitcoin
 est une souffrance à court terme car ils sont déjà à l’aise avec le fait
 d’utiliser des cartes de crédit, pour les adolescents c’est à l’inverse tout
 le processus d’ouverture de compte et de carte de crédit qui leur pose
-problème. Ils préféraient simplement pouvoir commencer à gagner et dépenser
+problème. Ils préfèreraient simplement pouvoir commencer à gagner et dépenser
 quelques “coins”. En outre, il ne sont pas encore corrompus par la psychologie
 du système de carte de crédit, qui veut qu’il est plus simple d’obtenir de
 l’argent rapidement et temporairement en suppliant plutôt qu’en produisant. La
