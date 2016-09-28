@@ -20,14 +20,15 @@ conduira la psychologie de la société.
 28/02/2012
 
 [Ethereum][Ethereum] est une __plateforme décentralisée__ et distribuée pour
-lancer des __smart contrats__ (où programmes autonomes sur une blockchain). Cette
-plateforme est un ordinateur à l’échelle mondiale. Il est toujours accessible et
-n’importe qui peut programmer un smart contrat dessus. Cet ordinateur global est
-formé à partir de milliers d'ordinateurs répartis sur toute la planète, ces
-ordinateurs sont appelés les __mineurs__. Ils utilisent  une base de
-__données distribuée__ appelée __blockchain__ pour partager les transactions et
-les programmes entre eux. Les données sont __décentralisées__, __persistantes__,
-sur un réseau __peer-to-peer__. Avantage : il n’y a pas de “single point of failure”.
+lancer des __smart contrats__ (où programmes autonomes sur une blockchain).
+Cette plateforme est un ordinateur à l’échelle mondiale. Il est toujours
+accessible et n’importe qui peut programmer un smart contrat dessus. Cet
+ordinateur global est formé à partir de milliers d'ordinateurs répartis sur
+toute la planète, ces ordinateurs sont appelés les __mineurs__. Ils utilisent
+une base de __données distribuée__ appelée __blockchain__ pour partager les
+transactions et les programmes entre eux. Les données sont __décentralisées__,
+__persistantes__, sur un réseau __peer-to-peer__. Avantage : il n’y a pas de
+“single point of failure”.
 
 ![Ethereum](http://i.stack.imgur.com/hDDzg.png)
 
@@ -49,15 +50,27 @@ Comment valider les blocs ?
 
 Le registre de la blockhain peut être modifié par un ou plusieurs mineurs. Alors
 comment s’assurer de la légitimité de celle-ci ? La validité de la blockchain
-est assurée par le __consensus des noeuds__ du réseau distribué. Principe : si un block est
-validé par la majorité des mineurs, il est considéré comme valide. Cette preuve
-de validité d’un bloc est appelé __proof-of-work__. Trouver cette preuve demande énormément de ressource.
+est assurée par le __consensus des noeuds__ du réseau distribué. Principe : si
+un block est validé par la majorité des mineurs, il est considéré comme valide.
+Cette preuve de validité d’un bloc est appelé __proof-of-work__. Trouver cette
+preuve demande énormément de ressource.
 C'est pourquoi, pour chaque ajout à la blockchain, le mineur se voit verser un
 certain montant de cryptomonnaie, fraîchement créée. La complexité ainsi
 que le chaînage des uns à la suite des autres font qu'il est difficile de
 falsifier ou supprimer les données de la blockchain. Pour modifier les données
 d'un bloc, il faut refaire valider l'ensemble des blocs qui le suivent, avant
 qu'un autre noeud n'ajoute un nouveau bloc à la chaîne.
+
+Qu'est-ce que les smart contract d'Ethereum ?
+=============================================
+
+Le smart contract (pour contrat intelligent) est un programme qui s'exécute sur
+la blockhain. Il peut dialoguer avec d'autres smart contract, prendre des
+décisions, envoyer des ethers (la cryptomonnaie d'Ethereum) et exécuter d'autres
+smart contract. Ces smart contract existeront tant que le réseau sera
+accessible. Il ne peuvent s'arrêter seulement s'ils ne sont plus alimentés par
+du __gas__ (la cryptomonnaie pour lancer les smart contract) ou si le
+développeur a programmé son auto-destruction.
 
 Bibliographie
 =============
