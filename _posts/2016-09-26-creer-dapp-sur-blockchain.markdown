@@ -11,8 +11,8 @@ est une souffrance à court terme car ils sont déjà à l’aise avec le fait
 d’utiliser des cartes de crédit, pour les adolescents c’est à l’inverse tout
 le processus d’ouverture de compte et de carte de crédit qui leur pose
 problème. Ils préfèreraient simplement pouvoir commencer à gagner et dépenser
-quelques “coins”. En outre, il ne sont pas encore corrompus par la psychologie
-du système de carte de crédit, qui veut qu’il est plus simple d’obtenir de
+quelques “coins”. En outre, ils ne sont pas encore corrompus par la psychologie
+du système de cartes de crédit qui veut qu’il est plus simple d’obtenir de
 l’argent rapidement et temporairement en suppliant plutôt qu’en produisant. La
 psychologie que ces jeunes adopteront sera, dans 10 ou 20 ans, celle qui
 conduira la psychologie de la société.
@@ -20,15 +20,14 @@ conduira la psychologie de la société.
 28/02/2012
 
 [Ethereum][Ethereum] est une __plateforme décentralisée__ et distribuée pour
-lancer des __smart contrats__ (où programmes autonomes sur une blockchain).
-Cette plateforme est un ordinateur à l’échelle mondiale. Il est toujours
-accessible et n’importe qui peut programmer un smart contrat dessus. Cet
-ordinateur global est formé à partir de milliers d'ordinateurs répartis sur
-toute la planète, ces ordinateurs sont appelés les __mineurs__. Ils utilisent
-une base de __données distribuée__ appelée __blockchain__ pour partager les
-transactions et les programmes entre eux. Les données sont __décentralisées__,
-__persistantes__, sur un réseau __peer-to-peer__. Avantage : il n’y a pas de
-“single point of failure”.
+lancer des __smart contrats__ (ou programmes autonomes sur une blockchain). Cette
+plateforme est un ordinateur à l’échelle mondiale. Il est toujours accessible et
+n’importe qui peut programmer un smart contrat dessus. Cet ordinateur global est
+formé à partir de milliers d'ordinateurs répartis sur toute la planète, ces
+ordinateurs sont appelés les __mineurs__. Ils utilisent une base de
+__données distribuée__, appelée __blockchain__, pour partager les transactions et
+les programmes entre eux. Les données sont __décentralisées__, __persistantes__,
+sur un réseau __peer-to-peer__. Avantage : il n’y a pas de “single point of failure”.
 
 ![Ethereum](http://i.stack.imgur.com/hDDzg.png)
 
@@ -41,7 +40,7 @@ données sans passer par un intermédiaire. La blockchain la plus connue est
 cryptomonnaie. Ces transactions sont validées par des mineurs, qui partagent une
 partie de leur puissance de calcul numérique (n’importe qui avec son ordinateur
 peut miner). Etherum reprend cette technologie et la généralise pour construire
-des applications, pas seulement une *monnaie*, sur la blockchain. Concrètement,
+des applications, et pas seulement une *monnaie*, sur la blockchain. Concrètement,
 il s’agit de développer un smart contract avec la logique de l’application et
 de la pousser dans la blockchain ethereum.
 
