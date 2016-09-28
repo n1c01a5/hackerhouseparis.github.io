@@ -76,6 +76,7 @@ Bibliographie
 =============
 
 - [Ethereum][Ethereum]: site officiel d'Ethereum
+- [Ethereum guide][Ethereum-guide]: guide d'Ethereum
 - [Ethstats][Ethstats]: statistiques sur Ethereum
 - [Etherchain][Etherchain]: statistiques sur Ethereum
 - [jefflau.net][jefflau.net]: introduction à Ethereum
@@ -84,6 +85,7 @@ Bibliographie
 
 
 [Ethereum]: https://www.ethereum.org/
+[Ethereum-guide]: https://ethereum.gitbooks.io/frontier-guide/content/index.html
 [Bitcoin]: https://bitcoin.org/fr/
 [Ethstats]: https://ethstats.net/
 [Etherchain]: https://www.etherchain.org/
