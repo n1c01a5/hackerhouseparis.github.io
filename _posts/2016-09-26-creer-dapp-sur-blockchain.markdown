@@ -71,6 +71,67 @@ accessible. Il ne peuvent s'arrêter seulement s'ils ne sont plus alimentés par
 du __gas__ (la cryptomonnaie pour lancer les smart contract) ou si le
 développeur a programmé son auto-destruction.
 
+Quels sont les outils de base pour développer une dApp ?
+========================================================
+
+Les outils les plus utilisés sont [geth][geth] pour mettre en place le réseau et
+[solc][solc] pour compiler le smart contract.
+
+Pour ajouter ces outils avec le gestionnaire de paquet *apt* :
+
+```bash
+apt-get update
+apt-get install -y software-properties-common
+add-apt-repository -y ppa:ethereum/ethereum
+add-apt-repository -y ppa:ethereum/ethereum-dev
+apt-get update
+apt-get install -y ethereum solc # pour installer le compilateur smart contract
+```
+
+Comment créer une blockhain privée avec 3 noeuds ?
+==================================================
+
+Il faut un premier bloc avec l'ensemble des caractéristiques de départ de notre
+blockchain.
+Le format est le suivant :
+
+```json
+{
+  "nonce": "0x00",
+  "difficulty": "0x1000",
+  "mixHash": "0x00",
+  "timestamp": "0x00",
+  "parentHash": "0x00",
+  "extraData": "0x00",
+  "gasLimit": "0x1000000000"
+}
+```
+
+- __nonce__ : hash que le mineur fait varier pour résoudre le proof-of-work.
+- __mixmash__ : hash de l'entête du bloc sur lequel se base le mineur pour
+trouver le nonce.
+- __timestamp__ : moment de validation du bloc.
+- __parentHash__ : hash du bloc précédant.
+- __extraData__ : paramètre facultatif pour stocker des données
+(32 octets max.).
+- __gasLimit__ : montant maximum de *gas* que les contrats peuvent consommer.
+- __difficulty__ : difficulté de la preuve de travail.
+
+Pour créer et initialiser le premier noeud la blockchain :
+
+```bash
+geth --datadir ./noeud1 --networkid "100" init genesis.json
+```
+
+Pour ajouter un autre noeud, il faut répéter la commande en modifiant le nom du
+noeud.
+
+Par exemple :
+
+```bash
+geth --datadir ./noeud2 --networkid "100" init genesis.json
+```
+
 Bibliographie
 =============
 
@@ -89,3 +150,5 @@ Bibliographie
 [Ethstats]: https://ethstats.net/
 [Etherchain]: https://www.etherchain.org/
 [jefflau.net]: http://jefflau.net/how-to-start-developing-on-ethereum-for-web-developers/
+[geth]: https://github.com/ethereum/go-ethereum
+[solc]: https://github.com/ethereum/solc-js
