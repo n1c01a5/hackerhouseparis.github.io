@@ -71,6 +71,125 @@ accessible. Il ne peuvent s'arrêter seulement s'ils ne sont plus alimentés par
 du __gas__ (la cryptomonnaie pour lancer les smart contract) ou si le
 développeur a programmé son auto-destruction.
 
+Quels sont les outils de base pour développer une dApp ?
+========================================================
+
+Les outils les plus utilisés sont [geth][geth] pour mettre en place le réseau et
+[solc][solc] pour compiler le smart contract.
+
+Pour ajouter ces outils avec le gestionnaire de paquet *apt* :
+
+```bash
+apt-get update
+apt-get install -y software-properties-common
+add-apt-repository -y ppa:ethereum/ethereum
+add-apt-repository -y ppa:ethereum/ethereum-dev
+apt-get update
+apt-get install -y ethereum solc # pour installer le compilateur smart contract
+```
+
+Comment créer une blockhain privée avec des noeuds ?
+==================================================
+
+Il faut un premier bloc avec l'ensemble des caractéristiques de départ de notre
+blockchain.
+Le format est le suivant :
+
+```json
+{
+  "nonce": "0x00",
+  "difficulty": "0x1000",
+  "mixHash": "0x00",
+  "timestamp": "0x00",
+  "parentHash": "0x00",
+  "extraData": "0x00",
+  "gasLimit": "0x1000000000"
+}
+```
+
+- __nonce__ : hash que le mineur fait varier pour résoudre le proof-of-work
+- __mixmash__ : hash de l'entête du bloc sur lequel se base le mineur pour
+trouver le nonce
+- __timestamp__ : moment de validation du bloc
+- __parentHash__ : hash du bloc précédant
+- __extraData__ : argument facultatif pour stocker des données
+(32 octets max.).
+- __gasLimit__ : montant maximum de *gas* que les contrats peuvent consommer
+- __difficulty__ : difficulté de la preuve de travail
+
+Pour créer et initialiser le premier noeud de la blockchain :
+
+```bash
+geth --datadir ./noeud1 --networkid "100" init genesis.json
+```
+
+Pour ajouter un autre noeud, il faut répéter la commande en modifiant le nom du
+noeud.
+
+Par exemple :
+
+```bash
+geth --datadir ./noeud2 --networkid "100" init genesis.json
+```
+
+- __datadir__ : répertoire de données du noeud
+- __networkid__ : flag qui identifie le réseau et permet aux pairs de le
+rejoindre
+
+Dans cet exemple, les flags *datadir* et *networkid* seront obligatoires pour
+appeler le client `geth` sur ce réseau, car ils identifient respectivement le
+répertoire de travail et l'identifiant du réseau.
+
+Comment créer un smart contract `Hello world!`?
+===============================================
+
+Il faut créer un nouveau compte sur le noeud pour réaliser des transactions,
+créer et interagir avec des smart contract.
+
+Sur le *noeud 1* :
+
+```bash
+geth --datadir ./noeud1 --networkid "100" account new
+```
+
+Une fois que le mot de passe est configuré, la console vous renvoie __clé
+publique__.
+
+Il faut ensuite lancer les noeuds.
+Pour le *noeud 1* sur le port *30301* :
+
+```bash
+geth --datadir ./noeud1 --networkid "100" --port "30301" console
+```
+
+Pour connaître l'adresse réseau de votre réseau, il faut entrer dans la console
+`geth` :
+
+```javascript
+admin.nodeInfo
+```
+
+Pour lier les noeuds entre eux, il faut utiliser *bootnodes* de `geth`.
+Pour lier le *noeud 1* avec le *noeud 2* :
+
+```bash
+geth --nodiscover --bootnodes enode://71160f012f666c47dbacbdfaa56b360478899b139ea57d5d1531eba80638c4786cdd250addfe8e81b4de33c20dcf0637793e8e36e7670ae510ba79dc8b378018@[::]:30301,enode://f4f06833fbc41d39eacbc110e66077ee931e5100c33ebbbcf9b3ccc84ef5aa6832754ed9eef5f70ae380c19e1412f6f04476cfe0ec8d81b6e3694039049e7f3d@[::]:30302
+```
+
+Pour créer le smart contract et l'assigner à la variable `greeterSource` dans la
+console :
+
+```javascript
+var greeterSource = 'contract mortal { address owner; function mortal() { owner = msg.sender; } function kill() { if (msg.sender == owner) suicide(owner); } } contract greeter is mortal { string greeting; function greeter(string _greeting) public { greeting = _greeting; } function greet() constant returns (string) { return greeting; } }';
+```
+
+Pour compiler le smart contract :
+
+```
+var greeterSourceCompiled = web3.eth.compile.solidity(greeterSource);
+```
+
+
 Bibliographie
 =============
 
@@ -89,3 +208,5 @@ Bibliographie
 [Ethstats]: https://ethstats.net/
 [Etherchain]: https://www.etherchain.org/
 [jefflau.net]: http://jefflau.net/how-to-start-developing-on-ethereum-for-web-developers/
+[geth]: https://github.com/ethereum/go-ethereum
+[solc]: https://github.com/ethereum/solc-js
