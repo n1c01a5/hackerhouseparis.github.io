@@ -132,6 +132,56 @@ Par exemple :
 geth --datadir ./noeud2 --networkid "100" init genesis.json
 ```
 
+Comment créer un smart contract `Hello world!`?
+===============================================
+
+Il faut créer un nouveau compte sur le noeud pour réaliser des transactions,
+créer et interagir avec des smart contract.
+
+Sur le *noeud 1* :
+
+```bash
+geth --datadir ./noeud1 --networkid "100" account new
+```
+
+Une fois que le mot de passe est configuré, la console vous renvoie __clé
+publique__.
+
+Il faut ensuite lancer les noeuds.
+Pour le *noeud 1* sur le port *30301* :
+
+```bash
+geth --datadir ./noeud1 --networkid "100" --port "30301" console
+```
+
+Pour connaître l'adresse réseau de votre réseau, il faut entrer dans la console
+`geth` :
+
+```javascript
+admin.nodeInfo
+```
+
+Pour lier, les noeuds entre eux il faut utiliser *bootnodes* de `geth`.
+Pour lier le *noeud 1* avec le *noeud 2* :
+
+```bash
+geth --nodiscover --bootnodes enode://71160f012f666c47dbacbdfaa56b360478899b139ea57d5d1531eba80638c4786cdd250addfe8e81b4de33c20dcf0637793e8e36e7670ae510ba79dc8b378018@[::]:30301,enode://f4f06833fbc41d39eacbc110e66077ee931e5100c33ebbbcf9b3ccc84ef5aa6832754ed9eef5f70ae380c19e1412f6f04476cfe0ec8d81b6e3694039049e7f3d@[::]:30302
+```
+
+Pour créer le smart contract et l'assigner à la variable `greeterSource` dans la
+console :
+
+```javascript
+var greeterSource = 'contract mortal { address owner; function mortal() { owner = msg.sender; } function kill() { if (msg.sender == owner) suicide(owner); } } contract greeter is mortal { string greeting; function greeter(string _greeting) public { greeting = _greeting; } function greet() constant returns (string) { return greeting; } }';
+```
+
+Pour compiler le smart contract :
+
+```
+var greeterSourceCompiled = web3.eth.compile.solidity(greeterSource);
+```
+
+
 Bibliographie
 =============
 
