@@ -88,7 +88,7 @@ apt-get update
 apt-get install -y ethereum solc # pour installer le compilateur smart contract
 ```
 
-Comment créer une blockhain privée avec 3 noeuds ?
+Comment créer une blockhain privée avec des noeuds ?
 ==================================================
 
 Il faut un premier bloc avec l'ensemble des caractéristiques de départ de notre
@@ -112,12 +112,12 @@ Le format est le suivant :
 trouver le nonce.
 - __timestamp__ : moment de validation du bloc.
 - __parentHash__ : hash du bloc précédant.
-- __extraData__ : paramètre facultatif pour stocker des données
+- __extraData__ : argument facultatif pour stocker des données
 (32 octets max.).
 - __gasLimit__ : montant maximum de *gas* que les contrats peuvent consommer.
 - __difficulty__ : difficulté de la preuve de travail.
 
-Pour créer et initialiser le premier noeud la blockchain :
+Pour créer et initialiser le premier noeud de la blockchain :
 
 ```bash
 geth --datadir ./noeud1 --networkid "100" init genesis.json
