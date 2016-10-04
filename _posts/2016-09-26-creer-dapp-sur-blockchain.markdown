@@ -107,15 +107,15 @@ Le format est le suivant :
 }
 ```
 
-- __nonce__ : hash que le mineur fait varier pour résoudre le proof-of-work.
+- __nonce__ : hash que le mineur fait varier pour résoudre le proof-of-work
 - __mixmash__ : hash de l'entête du bloc sur lequel se base le mineur pour
-trouver le nonce.
-- __timestamp__ : moment de validation du bloc.
-- __parentHash__ : hash du bloc précédant.
+trouver le nonce
+- __timestamp__ : moment de validation du bloc
+- __parentHash__ : hash du bloc précédant
 - __extraData__ : argument facultatif pour stocker des données
 (32 octets max.).
-- __gasLimit__ : montant maximum de *gas* que les contrats peuvent consommer.
-- __difficulty__ : difficulté de la preuve de travail.
+- __gasLimit__ : montant maximum de *gas* que les contrats peuvent consommer
+- __difficulty__ : difficulté de la preuve de travail
 
 Pour créer et initialiser le premier noeud de la blockchain :
 
@@ -131,6 +131,14 @@ Par exemple :
 ```bash
 geth --datadir ./noeud2 --networkid "100" init genesis.json
 ```
+
+- __datadir__ : répertoire de données du noeud
+- __networkid__ : flag qui identifie le réseau et permet aux pairs de le
+rejoindre
+
+Dans cet exemple, les flags *datadir* et *networkid* seront obligatoires pour
+appeler le client `geth` sur ce réseau, car ils identifient respectivement le
+répertoire de travail et l'indentifiant du réseau.
 
 Comment créer un smart contract `Hello world!`?
 ===============================================
@@ -161,7 +169,7 @@ Pour connaître l'adresse réseau de votre réseau, il faut entrer dans la conso
 admin.nodeInfo
 ```
 
-Pour lier, les noeuds entre eux il faut utiliser *bootnodes* de `geth`.
+Pour lier les noeuds entre eux, il faut utiliser *bootnodes* de `geth`.
 Pour lier le *noeud 1* avec le *noeud 2* :
 
 ```bash
