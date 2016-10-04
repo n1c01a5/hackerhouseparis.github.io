@@ -138,7 +138,7 @@ rejoindre
 
 Dans cet exemple, les flags *datadir* et *networkid* seront obligatoires pour
 appeler le client `geth` sur ce réseau, car ils identifient respectivement le
-répertoire de travail et l'indentifiant du réseau.
+répertoire de travail et l'identifiant du réseau.
 
 Comment créer un smart contract `Hello world!`?
 ===============================================
