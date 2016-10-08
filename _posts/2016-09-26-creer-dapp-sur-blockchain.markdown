@@ -176,6 +176,14 @@ Pour lier le *noeud 1* avec le *noeud 2* :
 geth --nodiscover --bootnodes enode://71160f012f666c47dbacbdfaa56b360478899b139ea57d5d1531eba80638c4786cdd250addfe8e81b4de33c20dcf0637793e8e36e7670ae510ba79dc8b378018@[::]:30301,enode://f4f06833fbc41d39eacbc110e66077ee931e5100c33ebbbcf9b3ccc84ef5aa6832754ed9eef5f70ae380c19e1412f6f04476cfe0ec8d81b6e3694039049e7f3d@[::]:30302
 ```
 
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">
+    &times;
+  </span>
+  <b>Attention !</b> Il faut lancer cette commande avant d'avoir lancer les
+  noeuds.
+</div>
+
 Pour créer le smart contract et l'assigner à la variable `greeterSource` dans la
 console :
 
