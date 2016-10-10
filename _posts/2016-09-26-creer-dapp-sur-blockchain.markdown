@@ -76,7 +76,7 @@ Qu'est-ce qu'une dApp ?
 
 DApp est l'abbrévation de __application décentralisée__. Une dApp a un *backend*
 qui s'éxécute sur un réseau peer-to-peer, le *smart contract*. Et la dApp a un
-*fronted* qui est l'interface utilisateur pour dialoguer avec le backend. Ce
+*frontend* qui est l'interface utilisateur pour dialoguer avec le backend. Ce
 frontend n'est pas forcément sur une blockhain mais cela est possible avec des
 outils tels que [Swarm ou IPFS][Swarm_IPFS].
 
