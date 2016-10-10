@@ -47,7 +47,7 @@ de la pousser dans la blockchain ethereum.
 Comment valider les blocs ?
 ===========================
 
-Le registre de la blockhain peut être modifié par un ou plusieurs mineurs. Alors
+Le registre de la blockchain peut être modifié par un ou plusieurs mineurs. Alors
 comment s’assurer de la légitimité de celle-ci ? La validité de la blockchain
 est assurée par le __consensus des noeuds__ du réseau distribué. Principe : si
 un block est validé par la majorité des mineurs, il est considéré comme valide.
@@ -64,7 +64,7 @@ Qu'est-ce que les smart contract d'Ethereum ?
 =============================================
 
 Le smart contract (pour contrat intelligent) est un programme qui s'exécute sur
-la blockhain. Il peut dialoguer avec d'autres smart contract, prendre des
+la blockchain. Il peut dialoguer avec d'autres smart contract, prendre des
 décisions, envoyer des ethers (la cryptomonnaie d'Ethereum) et exécuter d'autres
 smart contract. Ces smart contract existeront tant que le réseau sera
 accessible. Il ne peuvent s'arrêter seulement s'ils ne sont plus alimentés par
@@ -75,9 +75,9 @@ Qu'est-ce qu'une dApp ?
 =======================
 
 DApp est l'abbrévation de __application décentralisée__. Une dApp a un *backend*
-qui s'éxécute sur un réseau peer-to-peer, le *smart contract*. Et la dApp a un
+qui s'exécute sur un réseau peer-to-peer, le *smart contract*. Et la dApp a un
 *frontend* qui est l'interface utilisateur pour dialoguer avec le backend. Ce
-frontend n'est pas forcément sur une blockhain mais cela est possible avec des
+frontend n'est pas forcément sur une blockchain mais cela est possible avec des
 outils tels que [Swarm ou IPFS][Swarm_IPFS].
 
 DApp = frontend + contracts
@@ -101,8 +101,8 @@ apt-get update
 apt-get install -y ethereum solc # pour installer le compilateur smart contract
 ```
 
-Comment créer une blockhain privée avec des noeuds ?
-==================================================
+Comment créer une blockchain privée avec des noeuds ?
+=====================================================
 
 Il faut un premier bloc avec l'ensemble des caractéristiques de départ de notre
 blockchain.
@@ -220,7 +220,7 @@ Bibliographie
 - [Etherchain][Etherchain]: statistiques sur Ethereum
 - [jefflau.net][jefflau.net]: introduction à Ethereum
 - Programmez!#199: introduction à la programmation sur Ethereum
-- O'Reilly blockhain: introduction à la technologie de Bitcoin
+- O'Reilly blockchain: introduction à la technologie de Bitcoin
 
 
 [Ethereum]: https://www.ethereum.org/
