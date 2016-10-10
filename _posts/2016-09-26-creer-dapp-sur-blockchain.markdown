@@ -71,6 +71,19 @@ accessible. Il ne peuvent s'arrêter seulement s'ils ne sont plus alimentés par
 du __gas__ (la cryptomonnaie pour lancer les smart contract) ou si le
 développeur a programmé son auto-destruction.
 
+Qu'est-ce qu'une dApp ?
+=======================
+
+DApp est l'abbrévation de __application décentralisée__. Une dApp a un *backend*
+qui s'éxécute sur un réseau peer-to-peer, le *smart contract*. Et la dApp a un
+*fronted* qui est l'interface utilisateur pour dialoguer avec le backend. Ce
+frontend n'est pas forcément sur une blockhain mais cela est possible avec des
+outils tels que [Swarm ou IPFS][Swarm_IPFS].
+
+DApp = frontend + contracts
+
+![schema_dapp](http://i.stack.imgur.com/jzm8y.png)
+
 Quels sont les outils de base pour développer une dApp ?
 ========================================================
 
@@ -216,5 +229,6 @@ Bibliographie
 [Ethstats]: https://ethstats.net/
 [Etherchain]: https://www.etherchain.org/
 [jefflau.net]: http://jefflau.net/how-to-start-developing-on-ethereum-for-web-developers/
+[Swarm_IPFS]: https://github.com/ethersphere/go-ethereum/wiki/IPFS-&-SWARM
 [geth]: https://github.com/ethereum/go-ethereum
 [solc]: https://github.com/ethereum/solc-js
