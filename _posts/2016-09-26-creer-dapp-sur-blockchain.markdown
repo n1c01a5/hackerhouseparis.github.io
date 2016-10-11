@@ -47,7 +47,7 @@ de la pousser dans la blockchain ethereum.
 Comment valider les blocs ?
 ===========================
 
-Le registre de la blockhain peut être modifié par un ou plusieurs mineurs. Alors
+Le registre de la blockchain peut être modifié par un ou plusieurs mineurs. Alors
 comment s’assurer de la légitimité de celle-ci ? La validité de la blockchain
 est assurée par le __consensus des noeuds__ du réseau distribué. Principe : si
 un block est validé par la majorité des mineurs, il est considéré comme valide.
@@ -64,12 +64,25 @@ Qu'est-ce que les smart contract d'Ethereum ?
 =============================================
 
 Le smart contract (pour contrat intelligent) est un programme qui s'exécute sur
-la blockhain. Il peut dialoguer avec d'autres smart contract, prendre des
+la blockchain. Il peut dialoguer avec d'autres smart contract, prendre des
 décisions, envoyer des ethers (la cryptomonnaie d'Ethereum) et exécuter d'autres
 smart contract. Ces smart contract existeront tant que le réseau sera
 accessible. Il ne peuvent s'arrêter seulement s'ils ne sont plus alimentés par
 du __gas__ (la cryptomonnaie pour lancer les smart contract) ou si le
 développeur a programmé son auto-destruction.
+
+Qu'est-ce qu'une dApp ?
+=======================
+
+DApp est l'abbrévation de __application décentralisée__. Une dApp a un *backend*
+qui s'exécute sur un réseau peer-to-peer, le *smart contract*. Et la dApp a un
+*frontend* qui est l'interface utilisateur pour dialoguer avec le backend. Ce
+frontend n'est pas forcément sur une blockchain mais cela est possible avec des
+outils tels que [Swarm ou IPFS][Swarm_IPFS].
+
+DApp = frontend + contracts
+
+![schema_dapp](http://i.stack.imgur.com/jzm8y.png)
 
 Quels sont les outils de base pour développer une dApp ?
 ========================================================
@@ -88,8 +101,8 @@ apt-get update
 apt-get install -y ethereum solc # pour installer le compilateur smart contract
 ```
 
-Comment créer une blockhain privée avec des noeuds ?
-==================================================
+Comment créer une blockchain privée avec des noeuds ?
+=====================================================
 
 Il faut un premier bloc avec l'ensemble des caractéristiques de départ de notre
 blockchain.
@@ -176,6 +189,14 @@ Pour lier le *noeud 1* avec le *noeud 2* :
 geth --nodiscover --bootnodes enode://71160f012f666c47dbacbdfaa56b360478899b139ea57d5d1531eba80638c4786cdd250addfe8e81b4de33c20dcf0637793e8e36e7670ae510ba79dc8b378018@[::]:30301,enode://f4f06833fbc41d39eacbc110e66077ee931e5100c33ebbbcf9b3ccc84ef5aa6832754ed9eef5f70ae380c19e1412f6f04476cfe0ec8d81b6e3694039049e7f3d@[::]:30302
 ```
 
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">
+    &times;
+  </span>
+  <b>Attention !</b> Il faut lancer cette commande avant d'avoir lancer les
+  noeuds.
+</div>
+
 Pour créer le smart contract et l'assigner à la variable `greeterSource` dans la
 console :
 
@@ -199,7 +220,7 @@ Bibliographie
 - [Etherchain][Etherchain]: statistiques sur Ethereum
 - [jefflau.net][jefflau.net]: introduction à Ethereum
 - Programmez!#199: introduction à la programmation sur Ethereum
-- O'Reilly blockhain: introduction à la technologie de Bitcoin
+- O'Reilly blockchain: introduction à la technologie de Bitcoin
 
 
 [Ethereum]: https://www.ethereum.org/
@@ -208,5 +229,6 @@ Bibliographie
 [Ethstats]: https://ethstats.net/
 [Etherchain]: https://www.etherchain.org/
 [jefflau.net]: http://jefflau.net/how-to-start-developing-on-ethereum-for-web-developers/
+[Swarm_IPFS]: https://github.com/ethersphere/go-ethereum/wiki/IPFS-&-SWARM
 [geth]: https://github.com/ethereum/go-ethereum
 [solc]: https://github.com/ethereum/solc-js
