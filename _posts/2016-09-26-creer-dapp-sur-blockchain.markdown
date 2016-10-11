@@ -24,10 +24,11 @@ lancer des __smart contrats__ (ou programmes autonomes sur une blockchain). Cett
 plateforme est un ordinateur à l’échelle mondiale. Il est toujours accessible et
 n’importe qui peut programmer un smart contrat dessus. Cet ordinateur global est
 formé à partir de milliers d'ordinateurs répartis sur toute la planète, ces
-ordinateurs sont appelés les __mineurs__. Ils utilisent une base de
-__données distribuée__, appelée __blockchain__, pour partager les transactions et
-les programmes entre eux. Les données sont __décentralisées__, __persistantes__,
-sur un réseau __peer-to-peer__. Avantage : il n’y a pas de “single point of failure”.
+ordinateurs sont appelés les __noeuds__ du réseau dont certains sont des __mineurs__.
+Ils utilisent une base de __données distribuée__, appelée __blockchain__, pour 
+partager les transactions et les programmes entre eux. Les données sont
+__décentralisées__, __persistantes__, sur un réseau __peer-to-peer__. 
+Avantage : il n’y a pas de “single point of failure”.
 
 ![Ethereum](http://i.stack.imgur.com/hDDzg.png)
 
@@ -37,28 +38,44 @@ Qu’est-ce que la blockchain ?
 La blockchain est une base de donnée distribuée où l'on peut enregistrer des
 données sans passer par un intermédiaire. La blockchain la plus connue est
 [Bitcoin][Bitcoin] qui permet de s’échanger des __tokens__, c’est une forme de
-cryptomonnaie. Ces transactions sont validées par des mineurs, qui partagent une
-partie de leur puissance de calcul numérique (n’importe qui avec son ordinateur
-peut miner). Etherum reprend cette technologie et la généralise pour construire
-des applications, et pas seulement une *monnaie*, sur la blockchain. Concrètement,
-il s’agit de développer un smart contract avec la logique de l’application et
-de la pousser dans la blockchain ethereum.
+cryptomonnaie. Ces transactions sont enregistrées dans la blockchain par des 
+mineurs, qui apportent leur puissance de calcul à l'effort d'enregistrement
+(n’importe qui avec son ordinateur peut miner). Le processus d'enregistrement
+revient se fait par blocs de transactions successifs, d'où le terme de blockchain.
+Concrètement l'effort de calcul que fournisse les mineurs sécurise chaque bloc
+en garantissant son immuabilité.
+Etherum reprend cette technologie et la généralise pour construire des applications,
+et pas seulement une *monnaie*, sur la blockchain. Concrètement, il s’agit de 
+développer un smart contract avec la logique de l’application et de la pousser
+dans la blockchain ethereum.
 
-Comment valider les blocs ?
+Comment sont créés les blocs ?
 ===========================
 
-Le registre de la blockchain peut être modifié par un ou plusieurs mineurs. Alors
-comment s’assurer de la légitimité de celle-ci ? La validité de la blockchain
-est assurée par le __consensus des noeuds__ du réseau distribué. Principe : si
-un block est validé par la majorité des mineurs, il est considéré comme valide.
-Cette preuve de validité d’un bloc est appelé __proof-of-work__. Trouver cette
-preuve demande énormément de ressource.
-C'est pourquoi, pour chaque ajout à la blockchain, le mineur se voit verser un
+L'ajout d'un bloc dans le registre que constitue la blockhain est l'oeuvre des
+mineurs qui fournissent une solution à un puzzle cryptographique propre à chaque
+bloc. Ces puzzles sont générés par le protocol de la blockchain et il n'existe
+pas de meilleure technique de résolution que la force brute pour les résoudre.
+Ainsi, un mineur qui parvient à résoudre le puzzle d'un bloc peut prouver au
+réseau qu'il a bien fourni un travail computationnel sur ce puzzle. Le puzzle est
+par construction difficile à résoudre et cette difficulté s'adapte à la puissance
+de calcul de l'ensemble du réseau, pourtant lorsqu'une solution est trouvée elle
+est très simple à vérifier. Il est dès lors très facile pour les noeuds du réseau
+qui reçoivent un bloc de vérifier que sa solution est conforme et ainsi d'obtenir
+le __consensus des noeuds__  sur le dernier bloc de la blockchain. Cette preuve de
+validité d’un bloc est appelée __proof-of-work__ ou preuve de travail. Trouver 
+cette preuve demande énormément de ressources de calcul et donc d'électricité
+pour les mineurs, mais cette énergie est convertie en sécurité pour la blockchain.
+C'est pourquoi les blocs s'accompagnent d'une récompense, le mineur se voit verser un
 certain montant de cryptomonnaie, fraîchement créée. La complexité ainsi
 que le chaînage des uns à la suite des autres font qu'il est difficile de
-falsifier ou supprimer les données de la blockchain. Pour modifier les données
-d'un bloc, il faut refaire valider l'ensemble des blocs qui le suivent, avant
-qu'un autre noeud n'ajoute un nouveau bloc à la chaîne.
+falsifier ou supprimer les données de la blockchain. L'héritage d'un bloc à l'autre
+fait que la modification des données d'un bloc entraine la nécessité de résoudre
+un nouveau puzzle pour le bloc modifié et l'ensemble des blocs qui le suivent. Les
+noeuds suivent une règle fondamentale: la chaîne la plus longue est la chaîne qui
+fait foi. cela implique que pour qu'une modification soit validée par le réseau,
+il faut que cette modification soit accompagnée d'un effort calculatoire qui 
+croît exponentiellement à mesure que la modification est en aval dans la chaîne. 
 
 Qu'est-ce que les smart contract d'Ethereum ?
 =============================================
@@ -68,8 +85,8 @@ la blockchain. Il peut dialoguer avec d'autres smart contract, prendre des
 décisions, envoyer des ethers (la cryptomonnaie d'Ethereum) et exécuter d'autres
 smart contract. Ces smart contract existeront tant que le réseau sera
 accessible. Il ne peuvent s'arrêter seulement s'ils ne sont plus alimentés par
-du __gas__ (la cryptomonnaie pour lancer les smart contract) ou si le
-développeur a programmé son auto-destruction.
+du __gas__ (qui est une des formes de __l'ether__, c'est à dire la cryptomonnaie
+de la blockchain Ethereum) ou si le développeur a programmé son auto-destruction.
 
 Qu'est-ce qu'une dApp ?
 =======================
