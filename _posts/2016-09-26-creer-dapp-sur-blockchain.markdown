@@ -19,15 +19,16 @@ conduira la psychologie de la société.
 > - Vitalik Buterin (17ans à l’écriture de ce post), co-fondateur d’Ethereum,
 28/02/2012
 
-[Ethereum][Ethereum] est une __plateforme décentralisée__ et distribuée pour
-lancer des __smart contrats__ (ou programmes autonomes sur une blockchain). Cette
-plateforme est un ordinateur à l’échelle mondiale. Il est toujours accessible et
-n’importe qui peut programmer un smart contrat dessus. Cet ordinateur global est
-formé à partir de milliers d'ordinateurs répartis sur toute la planète, ces
-ordinateurs sont appelés les __noeuds__ du réseau dont certains sont des __mineurs__.
-Ils utilisent une base de __données distribuée__, appelée __blockchain__, pour
-partager les transactions et les programmes entre eux. Les données sont
-__décentralisées__, __persistantes__, sur un réseau __peer-to-peer__.
+[Ethereum][Ethereum] est une __plateforme décentralisée__ et __distribuée__ pour
+lancer des __smart contrats__ (ou programmes autonomes sur une blockchain).
+Cette plateforme est un ordinateur à l’échelle mondiale. Il est toujours
+accessible et n’importe qui peut programmer un smart contrat dessus. Cet
+ordinateur global est formé à partir de milliers d'ordinateurs répartis sur
+toute la planète et ces ordinateurs sont appelés les __noeuds__ du réseau dont
+certains sont des __mineurs__.  Ils utilisent une base de __données
+distribuée__, appelée __blockchain__, pour partager les transactions et les
+programmes entre eux. Les données sont __décentralisées__, __persistantes__ et
+sur un réseau __peer-to-peer__.
 Avantage : il n’y a pas de “single point of failure”.
 
 ![Ethereum](http://i.stack.imgur.com/hDDzg.png)
@@ -35,47 +36,50 @@ Avantage : il n’y a pas de “single point of failure”.
 Qu’est-ce que la blockchain ?
 =============================
 
-La blockchain est une base de donnée distribuée où l'on peut enregistrer des
-données sans passer par un intermédiaire. La blockchain la plus connue est
-[Bitcoin][Bitcoin] qui permet de s’échanger des __tokens__, c’est une forme de
-cryptomonnaie. Ces transactions sont enregistrées dans la blockchain par des
-mineurs, qui apportent leur puissance de calcul à l'effort d'enregistrement
-(n’importe qui avec son ordinateur peut miner). Le processus d'enregistrement
-revient se fait par blocs de transactions successifs, d'où le terme de blockchain.
+La blockchain est une base de donnée distribuée dans laquelle on peut
+enregistrer des données sans passer par un intermédiaire. La blockchain la plus
+connue est [Bitcoin][Bitcoin] qui permet de s’échanger des __tokens__, une
+forme de cryptomonnaie. Ces transactions sont enregistrées dans la blockchain
+par des mineurs qui apportent leur puissance de calcul à l'effort
+d'enregistrement (n’importe qui avec son ordinateur peut miner). Le processus
+d'enregistrement se fait par blocs de transactions successifs, d'où le
+terme de blockchain.
 Concrètement l'effort de calcul que fournisse les mineurs sécurise chaque bloc
 en garantissant son immuabilité.
-Etherum reprend cette technologie et la généralise pour construire des applications,
-et pas seulement une *monnaie*, sur la blockchain. Concrètement, il s’agit de
-développer un smart contract avec la logique de l’application et de la pousser
-dans la blockchain ethereum.
+Ethereum reprend cette technologie et la généralise pour construire des
+applications sur la blockchain, et pas seulement une *monnaie*. Concrètement,
+il s’agit de développer un smart contract avec la logique de l’application et de
+la pousser dans la blockchain Ethereum.
 
 Comment sont créés les blocs ?
 ===========================
 
 L'ajout d'un bloc dans le registre que constitue la blockhain est l'oeuvre des
 mineurs qui fournissent une solution à un puzzle cryptographique propre à chaque
-bloc. Ces puzzles sont générés par le protocol de la blockchain et il n'existe
-pas de meilleure technique de résolution que la force brute pour les résoudre.
+bloc. Ces puzzles sont générés par le protocole de la blockchain et il n'existe
+pas de meilleure technique de résolution que le brute-force pour les résoudre.
 Ainsi, un mineur qui parvient à résoudre le puzzle d'un bloc peut prouver au
-réseau qu'il a bien fourni un travail computationnel sur ce puzzle. Le puzzle est
-par construction difficile à résoudre et cette difficulté s'adapte à la puissance
-de calcul de l'ensemble du réseau, pourtant lorsqu'une solution est trouvée elle
-est très simple à vérifier. Il est dès lors très facile pour les noeuds du réseau
-qui reçoivent un bloc de vérifier que sa solution est conforme et ainsi d'obtenir
-le __consensus des noeuds__  sur le dernier bloc de la blockchain. Cette preuve de
-validité d’un bloc est appelée __proof-of-work__ ou preuve de travail. Trouver
-cette preuve demande énormément de ressources de calcul et donc d'électricité
-pour les mineurs, mais cette énergie est convertie en sécurité pour la blockchain.
-C'est pourquoi les blocs s'accompagnent d'une récompense, le mineur se voit verser un
-certain montant de cryptomonnaie, fraîchement créée. La complexité ainsi
-que le chaînage des uns à la suite des autres font qu'il est difficile de
-falsifier ou supprimer les données de la blockchain. L'héritage d'un bloc à l'autre
-fait que la modification des données d'un bloc entraine la nécessité de résoudre
-un nouveau puzzle pour le bloc modifié et l'ensemble des blocs qui le suivent. Les
-noeuds suivent une règle fondamentale: la chaîne la plus longue est la chaîne qui
-fait foi. cela implique que pour qu'une modification soit validée par le réseau,
-il faut que cette modification soit accompagnée d'un effort calculatoire qui
-croît exponentiellement à mesure que la modification est en aval dans la chaîne.
+réseau qu'il a bien fourni un travail computationnel sur ce puzzle. Le puzzle
+est, par construction, difficile à résoudre et cette difficulté s'adapte à la
+puissance de calcul de l'ensemble du réseau. Cependant, lorsqu'une solution est
+trouvée, elle est très simple à vérifier. Il est dès lors très facile pour les
+noeuds du réseau qui reçoivent un bloc de vérifier que sa solution est conforme
+et ainsi d'obtenir le __consensus des noeuds__ sur le dernier bloc de la
+blockchain. Cette preuve de validité d’un bloc est appelée __proof-of-work__ ou
+preuve de travail. Trouver cette preuve demande énormément de ressources de
+calcul et donc d'électricité pour les mineurs, mais cette énergie est convertie
+en sécurité pour la blockchain. En raison de cette forte demande de ressources,
+les blocs s'accompagnent d'une récompense: le mineur se voit verser un certain
+montant de cryptomonnaie fraîchement créée. La complexité ainsi que le chaînage
+des uns à la suite des autres font qu'il est difficile de falsifier ou supprimer
+les données de la blockchain. L'héritage d'un bloc à l'autre fait que la
+modification des données d'un bloc entraine la nécessité de résoudre un nouveau
+puzzle pour le bloc modifié et l'ensemble des blocs qui le suivent. Les noeuds
+suivent une règle fondamentale: la chaîne la plus longue est la chaîne qui fait
+foi. Ce dernier point implique que pour qu'une modification soit validée par le
+réseau, il faut que cette modification soit accompagnée d'un effort calculatoire
+qui croît exponentiellement à mesure que la modification est en aval dans la
+chaîne.
 
 Qu'est-ce que les smart contract d'Ethereum ?
 =============================================
