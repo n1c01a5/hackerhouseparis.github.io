@@ -16,7 +16,7 @@ du système de cartes de crédit qui veut qu’il est plus simple d’obtenir de
 l’argent rapidement et temporairement en suppliant plutôt qu’en produisant. La
 psychologie que ces jeunes adopteront sera, dans 10 ou 20 ans, celle qui
 conduira la psychologie de la société.
-> - Vitalik Buterin (17ans à l’écriture de ce post), fondateur d’Ethereum,
+> - Vitalik Buterin (17ans à l’écriture de ce post), co-fondateur d’Ethereum,
 28/02/2012
 
 [Ethereum][Ethereum] est une __plateforme décentralisée__ et distribuée pour
