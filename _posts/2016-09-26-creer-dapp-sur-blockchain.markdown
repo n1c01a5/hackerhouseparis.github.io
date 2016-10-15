@@ -117,6 +117,12 @@ add-apt-repository -y ppa:ethereum/ethereum-dev
 apt-get update
 apt-get install -y ethereum solc # pour installer le compilateur smart contract
 ```
+Sur mac:
+
+```bash
+brew tap ethereum/ethereum
+brew install ethereum
+```
 
 Comment créer une blockchain privée avec des noeuds ?
 =====================================================
