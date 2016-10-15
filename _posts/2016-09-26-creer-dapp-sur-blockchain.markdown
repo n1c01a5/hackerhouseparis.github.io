@@ -25,9 +25,9 @@ plateforme est un ordinateur à l’échelle mondiale. Il est toujours accessibl
 n’importe qui peut programmer un smart contrat dessus. Cet ordinateur global est
 formé à partir de milliers d'ordinateurs répartis sur toute la planète, ces
 ordinateurs sont appelés les __noeuds__ du réseau dont certains sont des __mineurs__.
-Ils utilisent une base de __données distribuée__, appelée __blockchain__, pour 
+Ils utilisent une base de __données distribuée__, appelée __blockchain__, pour
 partager les transactions et les programmes entre eux. Les données sont
-__décentralisées__, __persistantes__, sur un réseau __peer-to-peer__. 
+__décentralisées__, __persistantes__, sur un réseau __peer-to-peer__.
 Avantage : il n’y a pas de “single point of failure”.
 
 ![Ethereum](http://i.stack.imgur.com/hDDzg.png)
@@ -38,14 +38,14 @@ Qu’est-ce que la blockchain ?
 La blockchain est une base de donnée distribuée où l'on peut enregistrer des
 données sans passer par un intermédiaire. La blockchain la plus connue est
 [Bitcoin][Bitcoin] qui permet de s’échanger des __tokens__, c’est une forme de
-cryptomonnaie. Ces transactions sont enregistrées dans la blockchain par des 
+cryptomonnaie. Ces transactions sont enregistrées dans la blockchain par des
 mineurs, qui apportent leur puissance de calcul à l'effort d'enregistrement
 (n’importe qui avec son ordinateur peut miner). Le processus d'enregistrement
 revient se fait par blocs de transactions successifs, d'où le terme de blockchain.
 Concrètement l'effort de calcul que fournisse les mineurs sécurise chaque bloc
 en garantissant son immuabilité.
 Etherum reprend cette technologie et la généralise pour construire des applications,
-et pas seulement une *monnaie*, sur la blockchain. Concrètement, il s’agit de 
+et pas seulement une *monnaie*, sur la blockchain. Concrètement, il s’agit de
 développer un smart contract avec la logique de l’application et de la pousser
 dans la blockchain ethereum.
 
@@ -63,7 +63,7 @@ de calcul de l'ensemble du réseau, pourtant lorsqu'une solution est trouvée el
 est très simple à vérifier. Il est dès lors très facile pour les noeuds du réseau
 qui reçoivent un bloc de vérifier que sa solution est conforme et ainsi d'obtenir
 le __consensus des noeuds__  sur le dernier bloc de la blockchain. Cette preuve de
-validité d’un bloc est appelée __proof-of-work__ ou preuve de travail. Trouver 
+validité d’un bloc est appelée __proof-of-work__ ou preuve de travail. Trouver
 cette preuve demande énormément de ressources de calcul et donc d'électricité
 pour les mineurs, mais cette énergie est convertie en sécurité pour la blockchain.
 C'est pourquoi les blocs s'accompagnent d'une récompense, le mineur se voit verser un
@@ -74,8 +74,8 @@ fait que la modification des données d'un bloc entraine la nécessité de réso
 un nouveau puzzle pour le bloc modifié et l'ensemble des blocs qui le suivent. Les
 noeuds suivent une règle fondamentale: la chaîne la plus longue est la chaîne qui
 fait foi. cela implique que pour qu'une modification soit validée par le réseau,
-il faut que cette modification soit accompagnée d'un effort calculatoire qui 
-croît exponentiellement à mesure que la modification est en aval dans la chaîne. 
+il faut que cette modification soit accompagnée d'un effort calculatoire qui
+croît exponentiellement à mesure que la modification est en aval dans la chaîne.
 
 Qu'est-ce que les smart contract d'Ethereum ?
 =============================================
@@ -203,16 +203,8 @@ Pour lier les noeuds entre eux, il faut utiliser *bootnodes* de `geth`.
 Pour lier le *noeud 1* avec le *noeud 2* :
 
 ```bash
-geth --nodiscover --bootnodes enode://71160f012f666c47dbacbdfaa56b360478899b139ea57d5d1531eba80638c4786cdd250addfe8e81b4de33c20dcf0637793e8e36e7670ae510ba79dc8b378018@[::]:30301,enode://f4f06833fbc41d39eacbc110e66077ee931e5100c33ebbbcf9b3ccc84ef5aa6832754ed9eef5f70ae380c19e1412f6f04476cfe0ec8d81b6e3694039049e7f3d@[::]:30302
+geth --nodiscover --bootnodes="[enodeNoeud1],[enodeNoeud2],[enodeNoeudN]"
 ```
-
-<div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">
-    &times;
-  </span>
-  <b>Attention !</b> Il faut lancer cette commande avant d'avoir lancer les
-  noeuds.
-</div>
 
 Pour créer le smart contract et l'assigner à la variable `greeterSource` dans la
 console :
