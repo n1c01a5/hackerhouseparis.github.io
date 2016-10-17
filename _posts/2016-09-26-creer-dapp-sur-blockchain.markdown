@@ -20,9 +20,9 @@ conduira la psychologie de la société.
 28/02/2012
 
 [Ethereum][Ethereum] est une __plateforme décentralisée__ et __distribuée__ pour
-lancer des __smart contrats__ (ou programmes autonomes sur une blockchain).
+lancer des __smart contracts__ (ou programmes autonomes sur une blockchain).
 Cette plateforme est un ordinateur à l’échelle mondiale. Il est toujours
-accessible et n’importe qui peut programmer un smart contrat dessus. Cet
+accessible et n’importe qui peut programmer un smart contract dessus. Cet
 ordinateur global est formé à partir de milliers d'ordinateurs répartis sur
 toute la planète et ces ordinateurs sont appelés les __noeuds__ du réseau dont
 certains sont des __mineurs__.  Ils utilisent une base de __données
@@ -81,16 +81,17 @@ réseau, il faut que cette modification soit accompagnée d'un effort calculatoi
 qui croît exponentiellement à mesure que la modification est en aval dans la
 chaîne.
 
-Qu'est-ce que les smart contract d'Ethereum ?
+Que sont les smart contracts d'Ethereum ?
 =============================================
 
 Le smart contract (pour contrat intelligent) est un programme qui s'exécute sur
-la blockchain. Il peut dialoguer avec d'autres smart contract, prendre des
+la blockchain. Il peut dialoguer avec d'autres smart contracts, prendre des
 décisions, envoyer des ethers (la cryptomonnaie d'Ethereum) et exécuter d'autres
-smart contract. Ces smart contract existeront tant que le réseau sera
+smart contracts. Ces smart contracts existeront tant que le réseau sera
 accessible. Il ne peuvent s'arrêter seulement s'ils ne sont plus alimentés par
 du __gas__ (qui est une des formes de __l'ether__, c'est à dire la cryptomonnaie
-de la blockchain Ethereum) ou si le développeur a programmé son auto-destruction.
+de la blockchain Ethereum) ou si le développeur a programmé son
+auto-destruction.
 
 Qu'est-ce qu'une dApp ?
 =======================
@@ -148,14 +149,14 @@ Le format est le suivant :
 ```
 
 - __nonce__ : hash que le mineur fait varier pour résoudre le proof-of-work
+- __difficulty__ : difficulté de la preuve de travail
 - __mixmash__ : hash de l'entête du bloc sur lequel se base le mineur pour
 trouver le nonce
 - __timestamp__ : moment de validation du bloc
 - __parentHash__ : hash du bloc précédant
 - __extraData__ : argument facultatif pour stocker des données
-(32 octets max.).
+(32 octets max.)
 - __gasLimit__ : montant maximum de *gas* que les contrats peuvent consommer
-- __difficulty__ : difficulté de la preuve de travail
 
 Pour créer et initialiser le premier noeud de la blockchain :
 
@@ -184,7 +185,7 @@ Comment créer un smart contract `Hello world!`?
 ===============================================
 
 Il faut créer un nouveau compte sur le noeud pour réaliser des transactions,
-créer et interagir avec des smart contract.
+créer et interagir avec des smart contracts.
 
 Sur le *noeud 1* :
 
@@ -196,7 +197,7 @@ Une fois que le mot de passe est configuré, la console vous renvoie __clé
 publique__.
 
 Il faut ensuite lancer les noeuds.
-Pour le *noeud 1* sur le port *30301* :
+Pour lancer le *noeud 1* sur le port *30301* :
 
 ```bash
 geth --datadir ./noeud1 --networkid "100" --port "30301" console
