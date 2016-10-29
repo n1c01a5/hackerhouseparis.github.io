@@ -199,7 +199,16 @@ Pour connaître l'adresse réseau de votre réseau, il faut entrer dans la conso
 admin.nodeInfo
 ```
 
-Pour lier les noeuds entre eux, il faut utiliser *bootnodes* de `geth`.
+Pour lier les noeuds entre eux, il faut utiliser la méthode *addPeer* de
+*admin* sur `geth`:
+
+Par exemple pour lier le noeud 2 au noeud 1, entrer sur la console du `noeud1`:
+
+```
+admin.addPeer("[enodeNoeud2]")
+```
+
+On peut aussi utiliser *bootnodes* de `geth`.
 Pour lier le *noeud 1* avec le *noeud 2* :
 
 ```bash
@@ -219,6 +228,38 @@ Pour compiler le smart contract :
 var greeterSourceCompiled = web3.eth.compile.solidity(greeterSource);
 ```
 
+Le `smart contract` est maintenant compilé. Il est prêt pour le déploiement,
+cela inclus le set des variables comme par exemple le message de bienvenue.
+Tu peux modifier le message et exécuter ces commandes:
+
+```javascript
+var _greeting = "Hello World!"
+var greeterContract = web3.eth.contract(greeterSourceCompiled.greeter.info.abiDefinition);
+
+var greeter = greeterContract.new(_greeting,{from: web3.eth.accounts[0], data: greeterSourceCompiled.greeter.code, gas: 1000000}, function(e, contract){
+  if(!e) {
+
+    if(!contract.address) {
+      console.log("Contract transaction send: TransactionHash: " + contract.transactionHash + " waiting to be mined...");
+
+    } else {
+      console.log("Contract mined! Address: " + contract.address);
+      console.log(contract);
+    }
+
+  }
+})
+```
+
+Il faut ensuite miner le contrat avec `miner.start()`.
+
+Une fois miné, tu peux intéragir avec ton smart contract avec cette commande :
+```
+greeter.greet();
+```
+
+C'est tout! :)
+
 
 Bibliographie
 =============
@@ -230,6 +271,7 @@ Bibliographie
 - [jefflau.net][jefflau.net]: introduction à Ethereum
 - Programmez!#199: introduction à la programmation sur Ethereum
 - O'Reilly blockchain: introduction à la technologie de Bitcoin
+- [contract tutorial][contract tutorial]: introduction au smart contract
 
 
 [Ethereum]: https://www.ethereum.org/
@@ -241,3 +283,4 @@ Bibliographie
 [Swarm_IPFS]: https://github.com/ethersphere/go-ethereum/wiki/IPFS-&-SWARM
 [geth]: https://github.com/ethereum/go-ethereum
 [solc]: https://github.com/ethereum/solc-js
+[contract tutorial]: https://github.com/ethereum/go-ethereum/wiki/Contract-Tutorial
