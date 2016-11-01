@@ -212,7 +212,7 @@ admin.nodeInfo
 Pour lier les noeuds entre eux, il faut utiliser la méthode *addPeer* de
 *admin* sur `geth`:
 
-Par exemple pour lier le noeud 2 au noeud 1, entrer sur la console du `noeud1`:
+Par exemple pour lier le noeud 2 au noeud 1, entre sur la console du `noeud1`:
 
 ```
 admin.addPeer("[enodeNoeud2]")
@@ -239,7 +239,7 @@ var greeterSourceCompiled = web3.eth.compile.solidity(greeterSource);
 ```
 
 Le `smart contract` est maintenant compilé. Il est prêt pour le déploiement,
-cela inclus le set des variables comme par exemple le message de bienvenue.
+cela inclut le set des variables comme par exemple le message de bienvenue.
 Tu peux modifier le message et exécuter ces commandes:
 
 ```javascript
